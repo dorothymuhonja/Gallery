@@ -17,7 +17,7 @@ class Category(models.Model):
 
 
 
- class Location(models.Model):
+class Location(models.Model):
     name = models.CharField(max_length=15)
 
     def __str__(self):
@@ -34,7 +34,7 @@ class Category(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'images/' null = True)
+    image = models.ImageField(upload_to = 'images/', null = True)
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=100)
     category = models.ForeignKey('Category', on_delete = models.CASCADE, null=True, blank=True)
