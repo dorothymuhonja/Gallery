@@ -6,7 +6,8 @@ from django.urls import path
 
 urlpatterns=[
     path('', views.index, name='index'),
-    path('location/<str:location>', views.image_location, name='location')
+    path('location/<str:location>', views.image_location, name='location'),
+    path('search/', views.search_image, name='search')
 ]
 
 if settings.DEBUG:
