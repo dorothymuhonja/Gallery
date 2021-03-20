@@ -1,4 +1,5 @@
 from django.db import models
+from django.utils import timezone
 
 class Category(models.Model):
     name = models.CharField(max_length=15)
@@ -8,9 +9,6 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
-
-    def update_category(self):
-        Category.objects.filter(id = self.pk).update(**kwargs)
 
     def delete_category(self):
         Category.objects.filter(id = self.pk).delete()
@@ -23,22 +21,54 @@ class Location(models.Model):
     def __str__(self):
         return self.name
 
+    @classmethod
+    def get_locations(cls):
+        locations = Location.objects.all()
+        return locations
+
+    def __str__(self):
+        return self.name
+
+    @classmethod
+    def update_location(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
     def save_location(self):
         self.save()
 
-    def update_location(self):
-        Location.objects.filter(id = self.pk).update(**kwargs)
-
     def delete_location(self):
-        Location.objects.filter(id = self.pk).delete()   
+        self.delete()
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'images/', null = True)
+    image = models.ImageField(upload_to = 'images/', null=True)
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=100)
-    category = models.ForeignKey('Category', on_delete = models.CASCADE, null=True, blank=True)
-    location = models.ForeignKey('Location', on_delete = models.CASCADE, null=True, blank=True)
+    posted_by = models.CharField(max_length=50, default='admin')
+    date = models.DateTimeField(default=timezone.now)
+    category = models.ForeignKey('Category', on_delete = models.CASCADE, null=True)
+    location = models.ForeignKey('Location', on_delete = models.CASCADE, null=True)
+
+
+    @classmethod
+    def filter_by_location(cls, location):
+        image_location = Image.objects.filter(location_name=location).all()
+        return image_location
+
+    @classmethod
+    def update_image(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
+    @classmethod
+    def get_image_by_id(cls, id):
+        image = cls.objects.filter(id=id).all()
+        return image
+
+    @classmethod
+    def search_by_category(cls, category):
+        images = cls.objects.filter(category__nmae__icontains=category)
+        return images
+
 
     def __str__(self):
         return self.name
@@ -46,8 +76,9 @@ class Image(models.Model):
     def save_image(self):
         self.save()
 
-    def update_image(self, **kwargs):
-        self.objects.filter(id = self.pk).update(**kwargs)
-
     def delete_image(self):
-        Image.objects.filter(id = self.pk).delete()
+        self.delete()
+
+
+    class Meta:
+        ordering = ['date']
