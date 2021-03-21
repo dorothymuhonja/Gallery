@@ -22,7 +22,7 @@ def search_image(request):
         category = request.GET.get('imagesearch')
         searched_images = Image.search_by_category(category)
         message = f'{category}'
-        return render(request, 'search_image.html', {'message': message})
+        return render(request, 'search_image.html', {'message': message, "image": searched_images})
 
     else:
         message = "You haven't searched for any images"
