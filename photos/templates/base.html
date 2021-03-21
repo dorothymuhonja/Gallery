@@ -39,25 +39,28 @@
     {% endif %}
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="{% url 'index' %}">Gallery</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg navbar-light" >
+        <a class="navbar-brand" href="{% url 'index' %}" style="color: white;">Gallery</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" style="color: white;"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" >
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto list-inline">
-                <li class="nav-item active list-inline-item">
-                    <a class="nav-link" href="{% url 'index' %}">Home <span class="sr-only">(current)</span></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent" style="color: white;">
+            <ul class="navbar-nav mr-auto  category">
+                <li class="nav-item active list-inline-item" >
+                    <a class="nav-link" href="{% url 'index' %}" style="color: white;">Home <span class="sr-only">(current)</span></a>
                 </li>
-
-                <li class="nav-item list-inline-item">
+            
+                <li class="nav-item">
                     {% for category in categories %}
-                    <a class="nav-link" id="category" href="/category/{{category.name}}">{{category.name}}</a>
+                    <a class="nav-link" id="category" href="/category/{{category.name}}" style="color: white;">{{category.name}}</a>
                     {%endfor%}
                 </li>
+           
+
             </ul>
+
             <form class="d-flex input-group w-auto" size="20" action="/search" role="search">
                 <input type="search" class="form-control"  type="search" placeholder="Search Category" name="imagesearch"
                     aria-label="Search" />
@@ -68,7 +71,11 @@
         </div>
     </nav>
 
+
+
     {% block content %}
+
+ 
 
     {% endblock %}
 

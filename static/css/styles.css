@@ -1,8 +1,30 @@
 h2 {
-    color:black;
+    color:white;
     margin-top:2%;
     font-size:35px;
     font-family: 'Special Elite', cursive;
+}
+body{
+    background-image: url('https://freedesignfile.com/upload/2017/03/A-flower-of-dark-background-Stock-Photo-09.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.category{
+    list-style-type: none;
+    
+}
+
+
+.category li a{
+    display: inline;
+   
+}
+
+.jumbotron{
+    background-image:linear-gradient(rgba(165, 189, 179, 0.52), rgba(7, 77, 13, 0.73)),url('https://images.pexels.com/photos/257360/pexels-photo-257360.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500');
+    color: white;
 }
 
 .overlay{
@@ -35,19 +57,18 @@ body{
     border:none;
 }
 h3{
-    color:black;
+    color: white;
 
 }
 #locations{
-    color:black;
+    color:white;
 
 }
-li{
-    display: inline;
+.navbar-nav{
+    color: white;
 }
-
 hr{
-    background: black;
+    background: white;
     height:2px;
 }
 
@@ -56,13 +77,14 @@ hr{
     margin-bottom:3%;
 }
 #foundnon{
-    color: black;
+    color: white;
 }
+
 #btn{
     margin-right:6px;
 }
 .cat{
-    color: black;
+    color: white;
     float:center;
     background:gray;
     padding:4px;
