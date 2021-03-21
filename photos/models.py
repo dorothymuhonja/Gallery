@@ -44,7 +44,7 @@ class Location(models.Model):
 class Image(models.Model):
     image = models.ImageField(upload_to = 'images/', null=True)
     name = models.CharField(max_length=20)
-    description = models.CharField(max_length=100)
+    description = models.CharField(max_length=200)
     posted_by = models.CharField(max_length=50, default='admin')
     date = models.DateTimeField(default=timezone.now)
     category = models.ForeignKey('Category', on_delete = models.CASCADE, null=True)
