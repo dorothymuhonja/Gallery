@@ -45,6 +45,13 @@ A gallery app that allow a user to view and share images.
 ```
 python3 manage.py runserver
 ```
+## Behaviour Driven Development (BDD)
+#### User
+Can view images and image details
+Can copy image links
+
+#### Admin
+Can add, change or delete the images
 
 ### Screenshots
  ![Landing Page](static/images/home.png)
