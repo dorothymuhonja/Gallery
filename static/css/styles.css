@@ -1,0 +1,70 @@
+h2 {
+    color:black;
+    margin-top:2%;
+    font-size:35px;
+    font-family: 'Special Elite', cursive;
+}
+
+.overlay{
+    margin:0;
+    padding:0;
+    background-color:rgba(49, 83, 15,0.3);
+}
+.imagea{
+    margin-top:34%;
+    font-size:45px;
+    font-weight:bolder;
+}
+a{
+    text-decoration:none;
+}
+.image{
+
+    margin-bottom:18%;
+
+}
+body{
+    scroll-behavior: smooth;
+
+}
+
+.modalcard{
+    background-color:rgba(248, 242, 242, 0.8);
+    color:rgb(14, 12, 12);
+    padding:3%;
+    border:none;
+}
+h3{
+    color:black;
+
+}
+#locations{
+    color:black;
+
+}
+li{
+    display: inline;
+}
+
+hr{
+    background: black;
+    height:2px;
+}
+
+
+#found{
+    margin-bottom:3%;
+}
+#foundnon{
+    color: black;
+}
+#btn{
+    margin-right:6px;
+}
+.cat{
+    color: black;
+    float:center;
+    background:gray;
+    padding:4px;
+    border-radius:6px;
+}

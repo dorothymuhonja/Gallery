@@ -5,8 +5,18 @@ from PIL import Image
 class Category(models.Model):
     name = models.CharField(max_length=15)
 
+    @classmethod
+    def get_categories(cls):
+        categories = Category.objects.all()
+        return categories
+
     def __str__(self):
         return self.name
+
+    @classmethod
+    def update_category(cls, id, value):
+        cls.objects.filter(id=id).update(image=value)
+
 
     def save_category(self):
         self.save()
@@ -57,6 +67,11 @@ class Image(models.Model):
         return image_location
 
     @classmethod
+    def filter_by_category(cls, category):
+        image_category = Image.objects.filter(category__name=category).all()
+        return image_category
+
+    @classmethod
     def update_image(cls, id, value):
         cls.objects.filter(id=id).update(image=value)
 
@@ -77,13 +92,7 @@ class Image(models.Model):
 
     def save_image(self):
         self.save()
-        img = Image.open(self.image.path)
-
-        if img.height > 300 or img.width > 300:
-            output_size = (300, 300)
-            img.thumnail(output_size)
-            img.save(self.image.path)
-
+ 
     def delete_image(self):
         self.delete()
 
