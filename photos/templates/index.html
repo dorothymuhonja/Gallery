@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-
 {% block content %}
     
     <div class="container-fluid boded" id="b">
@@ -28,11 +27,12 @@
                     </span>
             </div>
             <hr>
-            <div class="card-columns">
+            
+            <div class="card-columns col-md-11">
                 {% for image in images %}
                 <div class=" card" data-toggle="modal" data-target="#{{image.id}}" >
                     <img src="{{image.image.url}}" alt="{{image.name}}"  
-                    class="card-img img-fluid" style="margin-top: 10px;margin-bottom:10px; width:600px; height: 300px;">
+                    class="card-img img-fluid" style="margin-top: 10px;margin-bottom:10px; width: 100%;">
                 </div>
     
     

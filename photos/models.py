@@ -1,6 +1,8 @@
 from django.db import models
 from django.utils import timezone
+from .models import *
 from PIL import Image
+from cloudinary.models import CloudinaryField
 
 class Category(models.Model):
     name = models.CharField(max_length=15)
@@ -52,7 +54,7 @@ class Location(models.Model):
 
 
 class Image(models.Model):
-    image = models.ImageField(upload_to = 'images/', null=True)
+    image = CloudinaryField('images', null=True)
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
     posted_by = models.CharField(max_length=50, default='admin')

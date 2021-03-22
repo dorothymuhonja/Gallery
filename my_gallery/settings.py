@@ -16,6 +16,9 @@ from decouple import config, Csv
 import django_heroku
 import dj_database_url
 from dotenv import load_dotenv
+import cloudinary
+import cloudinary.uploader
+import cloudinary.api
 
 load_dotenv()
 
@@ -26,6 +29,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
+
+# configuring cloudinary
+cloudinary.config(
+    cloud_name = config('CLOUD_NAME'),
+    api_key = config('CLOUD_API'),
+    api_secret = config('API_SECRET')
+)
 
 # SECURITY WARNING: keep the secret key used in production secret!
 MODE=config("MODE", default="dev")
@@ -40,7 +50,9 @@ ALLOWED_HOSTS = config('ALLOWED_HOSTS', cast=Csv())
 # Application definition
 
 INSTALLED_APPS = [
+    'cloudinary',
     'photos',
+    'clearcache',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
