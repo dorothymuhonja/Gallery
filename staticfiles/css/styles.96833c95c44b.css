@@ -1,0 +1,114 @@
+h2 {
+    color:white;
+    margin-top:2%;
+    font-size:35px;
+    font-family: 'Special Elite', cursive;
+}
+body{
+    margin: 0;
+    background-image: url('https://freedesignfile.com/upload/2017/03/A-flower-of-dark-background-Stock-Photo-09.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+}
+
+.category{
+    list-style-type: none;
+    
+}
+
+
+.category li a{
+    display: inline;
+    font-weight: 700;
+   
+}
+.category li a:hover{
+    background-color: rgb(44, 39, 39);
+}
+
+.jumbotron{
+    background-image:linear-gradient(rgba(111, 116, 114, 0.52), rgba(30, 32, 30, 0.73)),url('https://i.pinimg.com/originals/9a/b0/5a/9ab05ad8b3be22d1276779b6ca933a9d.jpg');
+    color: white;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    background-size: cover;
+    padding-right: 10px;
+    padding-bottom: 215px;
+    margin-right: 0;
+    margin-top: 20px;
+    
+}
+
+.welcome{
+    padding-top: 30px;
+    margin-top: 30px;
+}
+
+.overlay{
+    margin:0;
+    padding:0;
+    background-color:rgba(49, 83, 15,0.3);
+}
+.imagea{
+    margin-top:34%;
+    font-size:45px;
+    font-weight:bolder;
+}
+a{
+    text-decoration:none;
+}
+.image{
+
+    margin-bottom:18%;
+
+}
+body{
+    scroll-behavior: smooth;
+
+}
+
+.modalcard{
+    background-color:rgba(248, 242, 242, 0.8);
+    color:rgb(14, 12, 12);
+    padding:3%;
+    border:none;
+}
+h3{
+    color: white;
+
+}
+
+#locations{
+    color:white;
+
+}
+.navbar-nav{
+    color: white;
+}
+hr{
+    background: white;
+    height:2px;
+}
+
+
+#found{
+    margin-bottom:3%;
+}
+#foundnon{
+    color: white;
+}
+
+#btn{
+    margin-right:6px;
+}
+.cat{
+    color: white;
+    float:center;
+    background:gray;
+    padding:4px;
+    border-radius:6px;
+}
