@@ -54,7 +54,7 @@ class Location(models.Model):
 
 
 class Image(models.Model):
-    image = CloudinaryField('image', null=True)
+    image = CloudinaryField('images', null=True)
     name = models.CharField(max_length=20)
     description = models.CharField(max_length=200)
     posted_by = models.CharField(max_length=50, default='admin')
