@@ -31,15 +31,11 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.1/howto/deployment/checklist/
 
 # configuring cloudinary
-
 cloudinary.config(
-    cloud_name = 'dv4higsmg',
-    api_key = '147719463578893',
-    api_secret = 'DW3XibSion_my9OJTwLZRtGQhm8'
-
+    cloud_name = config('CLOUD_NAME'),
+    api_key = config('CLOUD_API'),
+    api_secret = config('API_SECRET')
 )
-
-
 
 DEFAULT_FILE_STORAGE='cloudinary_storage.storage.MediaCloudinaryStorage'
 
