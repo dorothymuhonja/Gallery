@@ -10,7 +10,6 @@ urlpatterns=[
     path('', views.index, name='index'),
     path('location/<str:location>', views.image_location, name='location'),
     path('category/<str:category>', views.image_category, name='category'),
-    path('search/', views.search_image, name='search')
 ]
 
 if settings.DEBUG:
