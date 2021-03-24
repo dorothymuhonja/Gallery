@@ -49,6 +49,7 @@ python3 manage.py runserver
 #### User
 Can view images and image details
 Can copy image links
+Click on the image to view the details
 
 #### Admin
 Can add, change or delete the images
